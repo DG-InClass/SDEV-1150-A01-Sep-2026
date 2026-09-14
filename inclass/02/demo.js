@@ -27,8 +27,6 @@ tablesNeeded = guestCount / seatsPerTable;
 report += '\n';
 report += `\nTables needed: ${tablesNeeded}`;
 
-// TODO: Continue with Step 6....
-
 let snackCost = 3.75;
 let drinkCost = 1.5;
 let suppliesFee = 12;
@@ -37,10 +35,10 @@ let drinkBudget = guestCount * drinkCost;
 let totalBudget = snackBudget + drinkBudget + suppliesFee;
 
 report += '\n';
-report += `\nSnack budget: $${snackBudget.toFixed(2)}`;
-report += `\nDrink budget: $${drinkBudget.toFixed(2)}`;
-report += `\nSupplies fee: $${suppliesFee.toFixed(2)}`;
-report += `\nTotal budget: $${totalBudget.toFixed(2)}`;
+report += `\nSnack budget: $${snackBudget}`;
+report += `\nDrink budget: $${drinkBudget}`;
+report += `\nSupplies fee: $${suppliesFee}`;
+report += `\nTotal budget: $${totalBudget}`;
 
 let signUpText = '18';
 let extraGuestText = '4';
@@ -53,5 +51,6 @@ report += `\nThe value ${signUpText} is a ${typeof signUpText}.`;
 report += `\nAfter parseInt(), ${signUpCount} is a ${typeof signUpCount}.`;
 report += `\nFinal guest count: ${finalGuestCount}`;
 
+// TODO: Continue with Step 9
 
 console.log(report);

@@ -77,3 +77,37 @@ console.log(`The workshop day of the month is ${workshopDate.getDate()}.`);
 console.log();
 
 // TODO: Resume with "Built-in Objects", step 3
+console.log("Changing object state with methods");
+console.log("----------------------------------");
+
+let reminderDate = new Date(workshopDate);
+reminderDate.setDate(reminderDate.getDate() - 7);
+//                   \____ back one week _____/
+
+// Because objects are "dynamic" in JavaScript,
+// we can "add" new properties just by assigning
+// a value to the property
+workshop.startsOn = workshopDate;
+workshop.reminderOn = reminderDate;
+
+console.log(`Reminder date: ${workshop.reminderOn.toDateString()}`);
+console.log(`Workshop date: ${workshop.startsOn.toDateString()}`);
+console.log();
+
+console.log('Another built-in object');
+console.log('-----------------------');
+
+let signUpUrl = new URL('https://library.example.test/workshops/photo-basics?level=beginner');
+
+console.log(`Signup link: ${signUpUrl.toString()}`); // Every object has a .toString()
+console.log(`Protocol: ${signUpUrl.protocol}`);
+console.log(`Host: ${signUpUrl.host}`);
+console.log(`Path: ${signUpUrl.pathname}`); 
+console.log(`Level Parameter: ${signUpUrl.searchParams.get('level')}`);
+console.log();
+
+console.log('Final workshop object');
+console.log('---------------------');
+console.log(workshop);
+
+export { workshop, facilitator, signUpUrl }

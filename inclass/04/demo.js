@@ -83,8 +83,8 @@ console.log(`Store name with bracket notation: ${store['name']}`);
 console.log(`Array entry with bracket notation: ${pickupItems[2]}`);
 console.log();
 
-console.log('Property names tha need bracket notation');
-console.log('----------------------------------------');
+console.log('Property names that need bracket notation');
+console.log('-----------------------------------------');
 
 // The quotes around the property names are needed because,
 // by themselves, they are not "valid" variable names (due
@@ -100,3 +100,29 @@ console.log(`Customer: ${pickupDetails['customer name']}`);
 console.log(`Status: ${pickupDetails.status}`);
 console.log();
 
+// Resuming Sep 23
+console.log('Objects inside an array');
+console.log('-----------------------');
+
+let cart = [
+  { name: 'bread', price: 3.49, quantity: 1 },
+  { name: 'oat milk', price: 5.15, quantity: 2 },
+  { name: 'frozen peas', price: 3.75, quantity: 1 }
+];
+
+console.table(cart);
+console.log('We can isolate a single object in the array:\n', cart[0])
+console.log('We can isolate a single property from an object in the array:');
+console.log(`The second item is: ${cart[1].name}`);
+console.log(`Second cart item subtotal: $${(cart[1].price * cart[1].quantity).toFixed(2)}`);
+console.log();
+
+console.log('Final boundary reminder');
+console.log('-----------------------');
+console.log(`First valid index: 0`);
+console.log(`Last valid index: ${cart.length - 1}`);
+console.log(`cart[cart.length] gives ${cart[cart.length]}`);
+// The following line would crash
+// console.log(`cart[cart.length].price gives ${cart[cart.length].price}`);
+
+export { cart, pickupItems, itemPrices, itemIsFrozen }

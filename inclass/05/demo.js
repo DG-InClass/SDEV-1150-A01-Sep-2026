@@ -71,3 +71,57 @@ console.log(`Meal + admission subtotal: ${formatMoney(tripSubtotal)}`);
 console.log(`Remaining after deposit: ${formatMoney(remainingAfterDeposit)}`);
 console.log();
 
+// TODO: Resume at Returning a Function from a Function
+// #region 
+// #region Step 1
+displayHeading('Returning a function from a function');
+
+const buildNumberedLogger = function() {
+  let currentStep = 1;  
+
+  return function(text) {
+    console.log(`${currentStep}) ${text}`);  
+    currentStep++;
+  };  
+};  
+// #endregion
+
+// #region Step 2
+let logStep = buildNumberedLogger();
+
+logStep(`Confirm ${studentCount} students.`);
+logStep(`Reserve ${busCount} buses.`);
+logStep(`Collect ${formatMoney(remainingAfterDeposit)} after the deposit.`);
+console.log();
+// #endregion
+
+// #region Step 4, 5, 6
+console.log('(each numbered logger has it own internal state....)\n');
+let morningChecklist = buildNumberedLogger();
+let afternoonChecklist = buildNumberedLogger();
+
+displayHeading('Morning Checklist', '~');
+morningChecklist('Take attendance.');
+morningChecklist('Load lunches.');
+morningChecklist("Meet at school entrance");
+morningChecklist("Board buses for trip");
+morningChecklist("Offload at Edmonton Science Centre");
+
+displayHeading('Afternoon Checklist', '~');
+afternoonChecklist('Meet outside for lunch');
+afternoonChecklist('Assemble at observatory');
+afternoonChecklist('Meet at the buses');
+afternoonChecklist('Take attendance');
+afternoonChecklist('Board buses for return.');
+afternoonChecklist('Return to school.');
+// #endregion
+
+export {
+  buildNumberedLogger,
+  calculateAmount,
+  calculateMealCost,
+  calculateBusCount,
+  calculateAdmissionCost,
+  formatMoney
+}
+// #endregion

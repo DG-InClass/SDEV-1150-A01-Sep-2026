@@ -2,6 +2,12 @@
 
 > *See the [Learning Outcome Guide](./LOGs.md) for this lesson. You are encouraged to edit [my lecture notes](./Notes.md) to capture relevant information delivered in class.*
 
+## A01 - Special Instructions
+
+Complete the code in the [`shapes.js`](./shapes.js) file by adding in the code from the [Lesson 09 Instructor Guide](./09.html), under the "Complete the Shape Logic" and "Use the Shape Module" section headings.
+
+![](./open-in-integrated-browser.png)
+
 ## Demo Instructions
 
 ![Static Badge](https://img.shields.io/badge/Assignment%201-In--Class%20Bucket-blue?style=for-the-badge&logo=javascript)

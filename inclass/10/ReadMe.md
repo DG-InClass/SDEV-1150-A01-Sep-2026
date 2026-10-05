@@ -2,6 +2,12 @@
 
 > *See the [Learning Outcome Guide](./LOGs.md) for this lesson. You are encouraged to edit [my lecture notes](./Notes.md) to capture relevant information delivered in class.*
 
+## A01 - Special Instructions
+
+Complete any un-finished steps from the [Lesson 10 Instructor Guide](./10.html) after the in-class lesson.
+
+![](./open-in-integrated-browser.png)
+
 ## Demo Instructions
 
 ![Static Badge](https://img.shields.io/badge/Assignment%201-In--Class%20Bucket-blue?style=for-the-badge&logo=javascript)

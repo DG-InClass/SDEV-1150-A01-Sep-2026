@@ -4,6 +4,11 @@
 
 ## A01 - Special Instructions
 
+```ps
+pnpm dlx tiged --disable-cache --force DG-InClass/SDEV-1150-A01-Sep-2026/inclass/09 ./inclass/09
+pnpm dlx tiged --disable-cache --force DG-InClass/SDEV-1150-A01-Sep-2026/inclass/10 ./inclass/10
+```
+
 Complete the code in the [`shapes.js`](./shapes.js) file by adding in the code from the [Lesson 09 Instructor Guide](./09.html), under the "Complete the Shape Logic" and "Use the Shape Module" section headings.
 
 ![](./open-in-integrated-browser.png)

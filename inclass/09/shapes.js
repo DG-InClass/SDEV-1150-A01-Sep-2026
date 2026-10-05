@@ -13,7 +13,7 @@ export function Shape(type) {
     // A "constructor" has one responsibility: To make sure the object
     // has all the information and behaviour that it needs.
 
-    this.type = type; // Storing the information about the type inside the object
+    this.type = type.toLowerCase(); // Storing the information about the type inside the object
 
     /**
      * Calculates the area of the shape.

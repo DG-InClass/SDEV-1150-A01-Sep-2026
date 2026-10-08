@@ -51,7 +51,7 @@ const threeTrustedLanguages = `
 languageList.innerHTML = threeTrustedLanguages;
 
 const asideImage = document.querySelector('aside img');
-asideImage.setAttribute('width', '100');
+asideImage.setAttribute('width', '180');
 asideImage.setAttribute('alt', 'A person building a website');
 asideImage.src = './img/undraw_code-review_jdgp.svg';
 

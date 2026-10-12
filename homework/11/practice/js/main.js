@@ -7,7 +7,10 @@ console.log('Homework 11 main.js loaded');
 // Setup marks-to-date
 calculator.setAssignmentTotal(26);
 calculator.addBucket('2/2');
-// TODO: Add more marks...
+calculator.addBucket('1/2');
+calculator.addBucket('2/2');
+calculator.addBucket('0/2');
+calculator.addBucket('2/2');
 
 let stats = calculator.getStats();
 

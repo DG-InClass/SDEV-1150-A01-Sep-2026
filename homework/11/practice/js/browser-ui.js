@@ -1,15 +1,35 @@
 export function fillCredits(year, author) {
-    // TODO: Fill the credit info part of the page
+    const yearSpan = document.querySelector('#copyright-year');
+    const authorSpan = document.querySelector('#copyright-author');
+
+    yearSpan.textContent = year;
+    authorSpan.innerText = author;
 }
 
 export function displayHeading(text, marker = "-") {
     let heading = document.querySelector('h1');
     heading.textContent = text;
-    // TODO: Modify the CSS class names based on the marker
+    heading.className = ''; // Clear all CSS classes
+    switch(marker) {
+        case '-':
+            heading.classList.add('underline');
+            break;
+        case '=':
+            heading.classList.add('thick');
+            break;
+        case '~':
+            heading.classList.add('wavy');
+            break;
+        default:
+            break; // do nothing
+    }
 }
 
-export function print(id, text){
-    // TODO: Find the element by id and replace it's text (if found)
+export function print(selector, text){
+    if(selector && text) {
+        let element = document.getElementById(selector);
+        element.textContent = text;
+    }
 }
 
 export function table(marks) {

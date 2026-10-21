@@ -25,7 +25,9 @@ form.addEventListener('input', (event) => {
 });
 
 form.addEventListener('submit', (event) => {
-  event.preventDefault();
+  event.preventDefault(); // 📍 This stops the browser from submitting the form to the webserver. That is important because we do NOT have a "backend" to this website that handles the form's content.
+  console.log(event.target); // This is the HTML <form> element
+  console.log(event.target.elements); // This is all of the input controls on the form
 
   // TODO: Validate the form before processing the submission.
   // TODO: If the form is valid, serialize it and echo the result.

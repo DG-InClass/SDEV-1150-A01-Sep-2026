@@ -109,3 +109,12 @@ h1 {
 h2 {
     @apply text-2xl mb-1.5;
 }
+
+
+input {
+    @apply rounded-2xl border-2 border-slate-500 px-2 py-1;
+}
+
+button {
+    @apply rounded-sm border-2 border-slate-600 px-2 py-1 bg-slate-400 text-white;
+}

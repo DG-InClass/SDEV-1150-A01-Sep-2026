@@ -1,0 +1,14 @@
+### ad-hoc.http
+GET https://transport.opendata.ch/v1/stationboard?station=Zürich HB&limit=10
+Accept: application/json
+
+### Berlin
+GET https://v6.vbb.transport.rest/stops/900017101/departures?duration=60
+Accept: application/json
+
+### Live flight data
+GET https://intelsky.org/api/
+Accept: application/json
+
+### Explore
+# https://dg-inclass.github.io/guides/api-data/

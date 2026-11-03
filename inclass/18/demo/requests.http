@@ -6,11 +6,36 @@ Accept: application/json
 
 ### GET one body
 # TODO: Send a GET request for body 1.
+GET http://localhost:3000/bodies/2
+Accept: application/json
 
 ### POST new body
 # TODO: Send a POST request to http://localhost:3000/bodies.
 # TODO: Include Content-Type: application/json.
 # TODO: Include a JSON body with name, category, image, description, nameOrigin, mass, radius, orbitalPeriod, and discoveryDate.
+POST http://localhost:3000/bodies
+Content-Type: application/json
+
+{
+    "name": "Proxima Centauri",
+    "category": "star",
+    "image": "sun.jpg",
+    "description": "The closest known star to the Sun.",
+    "nameOrigin": "The name means nearest star of Centaurus.",
+    "mass": "About 2.43 x 10^29 kg",
+    "radius": "107,000 km",
+    "orbitalPeriod": "Not applicable",
+    "discoveryDate": "1915"
+}
+
+### Separate requests with a comment that uses three pound characters at the start
+# Here we will do a search
+GET http://localhost:3000/bodies?name:eq=Proxima%20Centauri
+Accept: application/json
+
+### Here is another search
+GET http://localhost:3000/bodies?category:eq=star
+Accept: application/json
 
 ### PUT replace a body
 # TODO: Send a PUT request for body 1.

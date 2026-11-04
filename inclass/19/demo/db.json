@@ -167,6 +167,15 @@
       "radius": "1,163 km",
       "orbitalPeriod": "557 Earth years",
       "discoveryDate": "January 5, 2005"
+    },
+    {
+      "name": "ads;lfkja;ldfs",
+      "category": "dwarf planet",
+      "description": "adsgfdsgaf",
+      "orbitalPeriod": "aadfgagadfa",
+      "image": "saturn.jpg",
+      "id": "hjdZRK6UBOc"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

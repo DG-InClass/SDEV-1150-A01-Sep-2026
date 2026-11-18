@@ -1,7 +1,23 @@
 import MarkdownIt from 'markdown-it';
 import { fetchBlob, fetchJson, fetchText, sendJson } from './utils.js';
 
-const apiBase = '';
+// #region TEMPORARY
+fetchJson('/books')
+  .then(data => {
+    console.log(data);
+fetchJson('/summaries/orbiting-javascript.md')
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => {
+    console.warn(error.message);
+  });
+});
+// #endregion
+
+const apiBase = ''; // For real-world, you would put in some actual domain
+                    // such as https://backend.example.com
+                    //         http://localhost:3000
 const markdown = new MarkdownIt();
 
 const loadButton = document.querySelector('#load-catalog');
@@ -33,21 +49,48 @@ function clearJacketObjectUrl() {
 }
 
 function synthesizeCatalog(books, authors, reviews) {
-  // TODO: Join books to authors with authorId.
-  // TODO: Count reviews by bookId.
+  // This function acts similar to taking three database tables and
+  // assembling/joining the data
+  const result = books.map((book) => {
+    // TODO: Join books to authors with authorId.
+    const author = authors.find((item) => item.id === book.authorId);
+    // TODO: Count reviews by bookId.
+    const allReviews = reviews.filter((review) => review.bookId === Number(book.id));
+    
+    return {
+      ...book, // all of the book information
+      authorName: author?.name ?? 'Unknown author',
+      reviewCount: allReviews.length,
+    }
+  });
+  
   // TODO: Return display objects for the book list.
+  return result;
 }
 
 function renderCatalog(catalog) {
   // TODO: Render one button per book.
+  button.dataset.bookId = book.id;
   // TODO: Mark the selected book with aria-current.
+  button.setAttribute('aria-current', String(book.id === selectedBookId))
   // TODO: Store the book id in a data attribute.
 }
 
 async function loadCatalog() {
   // TODO: Load books, authors, and reviews with Promise.all().
+  // The Promise.all() will run all these async functions to completion
+  // Each function call will be able to fire asynchronously, but by
+  // awaiting the Promise.all(), our code will pause until all the results are in.
+  const [books, authors, reviews] = await Promise.all([
+    fetchJson(buildEndpoint('/books')),
+    fetchJson(buildEndpoint('/authors')),
+    fetchJson(buildEndpoint('/reviews')),
+  ]);
   // TODO: Synthesize the API responses into one catalog list.
+  const catalog = synthesizeCatalog(books, authors, reviews);
+
   // TODO: Render the catalog and select the first book.
+  renderCatalog(catalog);
   // TODO: Show loading, success, empty, and error states.
 }
 

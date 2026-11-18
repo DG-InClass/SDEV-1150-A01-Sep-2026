@@ -21,3 +21,5 @@ pnpm dev
 ```
 
 Use `api-smoke-test.http` with the REST Client extension to confirm the API and static files are available before writing browser code.
+
+![alt text](image.png)
